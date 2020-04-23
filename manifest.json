@@ -1,0 +1,31 @@
+{
+    "name": "Clean Captain",
+    "version": "1.0",
+    "description": "Clear cookies for current website",
+    "permissions": ["contextMenus", "browsingData", "activeTab", "declarativeContent", "storage"],
+    "background":{
+        "page": "src/html/background.html"
+    },
+    "page_action" : {
+        "default_popup": "src/html/popup.html",
+        "default_icon": {
+            "16": "src/img/get_started16.png",
+            "32": "src/img/get_started32.png",
+            "48": "src/img/get_started48.png",
+            "128": "src/img/get_started128.png"
+        }
+    },
+    "content_scripts": [
+        {
+          "matches": ["http://*/*","https://*/*"],
+          "js": ["src/lib/sweetalert2.all.min.js", "src/js/content.js"]
+        }
+    ],
+    "icons": {
+        "16": "src/img/get_started16.png",
+        "32": "src/img/get_started32.png",
+        "48": "src/img/get_started48.png",
+        "128": "src/img/get_started128.png"
+    },
+    "manifest_version": 2
+}
