@@ -18,7 +18,7 @@ chrome.contextMenus.onClicked.addListener(function (info, tab) {
 });
 
 chrome.runtime.onInstalled.addListener(function () {
-  chrome.storage.sync.set({ domain: '' }, function () {
+  chrome.storage.sync.set({ reload:false, noPrompt:false, domain: '' }, function () {
     console.debug("Init storage");
   });
   chrome.declarativeContent.onPageChanged.removeRules(undefined, function () {
