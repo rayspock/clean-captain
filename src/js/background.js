@@ -6,14 +6,14 @@
 import * as helper from './helper.js';
 
 chrome.contextMenus.create({
-  id: "clear-cookies",
-  title: "Clear cookies",
+  id: "clear-site-data",
+  title: "Clear site data",
   contexts: ["page_action"]
 });
 
 chrome.contextMenus.onClicked.addListener(function (info, tab) {
-  if (info.menuItemId == "clear-cookies") {
-    helper.notifyClearCookies(chrome, tab);
+  if (info.menuItemId == "clear-site-data") {
+    helper.notifyClearData(chrome, tab);
   }
 });
 
@@ -33,23 +33,30 @@ chrome.runtime.onInstalled.addListener(function () {
 });
 
 chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
-  if (request.command === "CLEAR_COOKIES") {
+  if (request.command === "CLEAR_DATA") {
     chrome.storage.sync.get("domain", (data) => {
       chrome.browsingData.remove(
         {
           origins: [data.domain],
         },
         {
-          cookies: true
+          cacheStorage: true,
+          cookies: true,
+          fileSystems: true,
+          indexedDB: true,
+          localStorage: true,
+          pluginData: true,
+          serviceWorkers: true,
+          webSQL: true
         },
         (e) => {
           console.debug("clear cookies:", e);
           chrome.tabs.query({ active: true, currentWindow: true }, (tabs) => {
             chrome.tabs.sendMessage(
               tabs[0].id,
-              { command: "CLEAR_COOKIES_SUCCESS" },
+              { command: "CLEAR_DATA_SUCCESS" },
               (response) => {
-                console.debug("Sending CLEAR_COOKIES_SUCCESS message:", response.result)
+                console.debug("Sending CLEAR_DATA_SUCCESS message:", response.result)
               }
             );
           });

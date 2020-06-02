@@ -37,9 +37,9 @@ chrome.storage.sync.get("noPrompt", (data) => {
     });
 });
 
-$('#clearCookies').click(() => {
+$('#clearData').click(() => {
     chrome.tabs.query({ active: true, currentWindow: true }, (tabs) => {
-        helper.notifyClearCookies(chrome, tabs[0])
+        helper.notifyClearData(chrome, tabs[0])
     });
     window.close();
 });

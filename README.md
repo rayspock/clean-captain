@@ -2,7 +2,7 @@
 
 ### An efficient cookies cleaner add-on for Chrome. Fast and lean.
 
-- Clear cookies for current website
+- Clear cookies from visiting websites
 
 ### Install this extension locally
 
