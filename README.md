@@ -4,7 +4,7 @@
 
 - Clear cookies from visiting websites
 
-### Install this extension locally
+### Install this extension locally or from the [Chrome Web Store](https://chrome.google.com/webstore/detail/clean-captain/finpbdieoeedpjhaimgobfodhhdnoljb)
 
 1. Download this Repository ZIP.
 
