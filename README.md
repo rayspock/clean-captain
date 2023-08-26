@@ -1,4 +1,7 @@
+
+Chrome Web Store: [![rating](https://img.shields.io/badge/rating-★★★★★-brightgreen)](https://chrome.google.com/webstore/detail/clean-captain/finpbdieoeedpjhaimgobfodhhdnoljb)
 # Clean Captain
+
 
 ### An efficient cookies cleaner add-on for Chrome. Fast and lean.
 
