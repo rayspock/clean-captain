@@ -12,7 +12,7 @@ chrome.contextMenus.create({
 });
 
 chrome.contextMenus.onClicked.addListener(function (info, tab) {
-  if (info.menuItemId == "clear-site-data") {
+  if (info.menuItemId === "clear-site-data") {
     helper.notifyClearData(chrome, tab);
   }
 });
