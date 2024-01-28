@@ -17,6 +17,9 @@ chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
           confirmButtonColor: "#3085d6",
           cancelButtonColor: "#d33",
           confirmButtonText: "Yes, delete it!",
+          customClass: {
+            container: "my-swal",
+          },
         }).then((result) => {
           if (result.value) {
             chrome.runtime.sendMessage(
@@ -35,7 +38,14 @@ chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
         history.go(0);
       } else {
         if (!data.noPrompt) {
-          Swal.fire("Deleted!", "Your cookies has been deleted.", "success");
+          Swal.fire({
+            title: "Deleted!",
+            text: "Your cookies has been deleted.",
+            icon: "success",
+            customClass: {
+              container: "my-swal",
+            },
+          });
         }
       }
     });
