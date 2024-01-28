@@ -14,7 +14,7 @@
 
 1. Clone this repo
 1. Execute `make` to build the extension
-1. Unzip the generated `CleanCaptain.zip` file from the `dist` folder
+1. Unzip the generated `clean-captain.zip` file from the `dist` folder
 1. Open Chrome or Brave and go to `chrome://extensions` or `brave://extensions`
 1. Enable developer mode
 1. Click on `Load unpacked extension` and select the unzipped folder from step 3
