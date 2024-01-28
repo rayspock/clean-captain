@@ -37,7 +37,7 @@ chrome.storage.sync.get("noPrompt", (data) => {
   });
 });
 
-$("#clearData").click(() => {
+$("#clearData").on("click", () => {
   chrome.tabs.query({ active: true, currentWindow: true }, (tabs) => {
     helper.notifyClearData(chrome, tabs[0]);
   });
