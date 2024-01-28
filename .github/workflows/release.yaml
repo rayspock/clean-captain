@@ -9,7 +9,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Get Release Info
+      - name: Get release info
         run: |
           {
           echo "RELEASE_TAG=${GITHUB_REF/refs\/tags\//}"
