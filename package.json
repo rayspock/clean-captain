@@ -5,6 +5,8 @@
     "prettier": "prettier --write \"**/*.js\""
   },
   "devDependencies": {
+    "@types/chrome": "^0.0.259",
+    "@types/jquery": "^3.5.29",
     "prettier": "^3.2.4"
   }
 }
