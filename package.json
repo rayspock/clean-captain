@@ -1,0 +1,10 @@
+{
+  "name": "clean-captain",
+  "author": "rayspock",
+  "scripts": {
+    "prettier": "prettier --write \"**/*.js\""
+  },
+  "devDependencies": {
+    "prettier": "^3.2.4"
+  }
+}
